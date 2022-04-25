@@ -147,14 +147,14 @@ int main()
 
 		switch (c)
 		{
-		case 1: //1 - Сложение
+		case 1: 
 			system("cls");
 			cout << "Введите значение: " << endl;
 			cin >> value;
 			list.push(value);
 			cout << "Значение добавлено в стек\n " << endl;
 			break;
-		case 2: //2 - Вычитание
+		case 2: 
 			system("cls");
 			cout << "Введите номер элемента, который вы хотите удалить: ";
 			cin >> num;
@@ -163,7 +163,7 @@ int main()
 			else
 				list.del(num);
 			break;
-		case 3: //3 - Сравнение "меньше, чем"
+		case 3: 
 			system("cls");
 			if (list.get_size() == 0)
 			{
@@ -177,19 +177,19 @@ int main()
 				cout << "\n";
 			}
 			break;
-		case 4: //4 - Сравнение "больше, чем"
+		case 4: 
 			system("cls");
 			cout << "Введите число, с которым хотите провести сравнение каждого элемента списка, путем применения оператора \"<\": ";
 			cin >> value;
 			value < list;
 			break;
-		case 5: //5 - Сравнение "неравно"
+		case 5: 
 			system("cls");
 			cout << "Введите число, с которым хотите провести сравнение каждого элемента списка, путем применения оператора \">\": ";
 			cin >> value;
 			value > list;
 			break;
-		case 6: //6 - Сравнение "равно"
+		case 6: 
 			system("cls");
 			cout << "Введите число, с которым хотите провести сравнение каждого элемента списка, путем применения оператора \"==\": ";
 			cin >> value;
@@ -217,11 +217,10 @@ int main()
 			system("cls");
 			cout << "Введите индексы(границы) подсписка: ";
 			cin >> l >> r;
-			//cout << "huy";
 			buffer = list(l, r);
 			buffer->print();
 			break;
-		case 0: //0 - Выход
+		case 0: 
 			cout << "\n";
 			flag = 0;
 			break;

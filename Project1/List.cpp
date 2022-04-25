@@ -34,22 +34,22 @@ List::~List()
 
 List::List(const List& List_copy) : size(List_copy.size)
 {
-	int* buff = new int[List_copy.size]; //вводим буферный массив, в котором будем хранить наши числа нового стека
-	Element* el_List = List_copy.right; //новая переменная-вершина будущего стека
+	int* buff = new int[List_copy.size]; //вводим буферный массив, в котором будем хранить наши числа нового списка
+	Element* el_List = List_copy.right; //новая переменная-вершина будущего списка
 
 	for (int i = 0; i <= List_copy.size - 1; i++)
-	{	//пока счетчик не дойдет до конца стека
-		buff[i] = el_List->data; //заносим в массив значения из стека
-		el_List = el_List->next; //ставим указатель на следующий элемент стека
+	{	//пока счетчик не дойдет до конца списка
+		buff[i] = el_List->data; //заносим в массив значения из списка
+		el_List = el_List->next; //ставим указатель на следующий элемент списка
 	}
 
 	for (int i = 0; i < List_copy.size; i++)
-		this->push(buff[i]); //вносим в новый стек значения из массива
+		this->push(buff[i]); //вносим в новый список значения из массива
 
 	delete[] buff; //удаляем буфер
 }
 
-/* МЕТОДЫ КЛАССА СТЕКА */
+/* МЕТОДЫ КЛАССА СПИСОК */
 
 void List::push(int value)
 {
@@ -64,7 +64,6 @@ void List::push(int value)
 		new_Element->prev = right;               //Указываем адрес на предыдущий элемент в соотв. поле
 		right->next = new_Element;               //Указываем адрес следующего за хвостом элемента
 		right = new_Element;                     //Меняем адрес хвоста
-		//cout << "HUY";
 	}
 	else //Если список пустой
 	{
@@ -80,7 +79,7 @@ void List::del(int num)
 
 	if (size == 0)
 	{
-		cout << "Стек пуст, удалять нечего." << endl;
+		cout << "список пуст, удалять нечего." << endl;
 	}
 	else {
 		
@@ -122,20 +121,11 @@ void List::print()
 {
 	if (size == 0)
 	{
-		cout << "Стек пуст, выводить нечего." << endl;
+		cout << "список пуст, выводить нечего." << endl;
 	}
 	else
 	{
-		/*Element* temp = left;
-		int c = 0;
-		while (c != 1)
-		{
-			cout << temp->data << "   ";
-			temp = temp->next;
-			c++;
-		}
-
-		cout << temp->data << endl;*/
+		
 		Element* temp = left;                   //Временный указатель на адрес последнего элемента
 
 		//ВЫВОДИМ СПИСОК С НАЧАЛА                      //Временно указываем на адрес первого элемента
@@ -265,8 +255,6 @@ List* List::operator() (int l, int r)
 		arr[i-l] = tmp->data;
 		tmp = tmp->next;
 		temp->push(arr[i - l]);
-		//temp->print();
-		//cout << arr[i - l] << " ";
 	}
 	
 	
