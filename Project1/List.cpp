@@ -55,10 +55,10 @@ void List::push(int value)
 {
 
 	Element* new_Element = new Element;              //Выделение памяти под новый элемент структуры
-	new_Element->next = NULL;                   //Указываем, что изначально по следующему адресу пусто
+	new_Element->next = nullptr;                   //Указываем, что изначально по следующему адресу пусто
 	new_Element->data = value;                         //Записываем значение в структуру
 
-	if (left != NULL)                    //Если список не пуст
+	if (left != nullptr)                    //Если список не пуст
 	{
 
 		new_Element->prev = right;               //Указываем адрес на предыдущий элемент в соотв. поле
@@ -67,7 +67,7 @@ void List::push(int value)
 	}
 	else //Если список пустой
 	{
-		new_Element->prev = NULL;               //Предыдущий элемент указывает в пустоту
+		new_Element->prev = nullptr;               //Предыдущий элемент указывает в пустоту
 		right = left = new_Element;              //Голова=Хвост=тот элемент, что сейчас добавили
 	}
 	size++;
@@ -165,7 +165,7 @@ void List::set_size(int& value)
 void operator < (int value, const List& list) 
 {
 	Element* left = list.left;
-	while (left->next != nullptr)
+	while (left != nullptr)
 	{
 		if (left->data < value)
 			cout << left->data << " < " << value << " - true" << endl;
@@ -178,7 +178,7 @@ void operator < (int value, const List& list)
 void operator > (int value, const List& list)
 {
 	Element* left = list.left;
-	while (left->next != nullptr)
+	while (left != nullptr)
 	{
 		if (left->data > value)
 			cout << left->data << " > " << value << " - true" << endl;
@@ -191,7 +191,7 @@ void operator > (int value, const List& list)
 void operator == (int value, const List& list)
 {
 	Element* left = list.left;
-	while (left->next != nullptr)
+	while (left != nullptr)
 	{
 		if (left->data == value)
 			cout << left->data << " = " << value << " - true" << endl;
@@ -204,7 +204,7 @@ void operator == (int value, const List& list)
 void operator != (int value, const List& list)
 {
 	Element* left = list.left;
-	while (left->next != nullptr)
+	while (left != nullptr)
 	{
 		if (left->data != value)
 			cout << left->data << " != " << value << " - true" << endl;
@@ -217,7 +217,7 @@ void operator != (int value, const List& list)
 void operator <= (int value, const List& list)
 {
 	Element* left = list.left;
-	while (left->next != nullptr)
+	while (left != nullptr)
 	{
 		if (left->data <= value)
 			cout << left->data << " <= " << value << " - true" << endl;
@@ -230,7 +230,7 @@ void operator <= (int value, const List& list)
 void operator >= (int value, const List& list)
 {
 	Element* left = list.left;
-	while (left->next != nullptr)
+	while (left != nullptr)
 	{
 		if (left->data <= value)
 			cout << left->data << " >= " << value << " - true" << endl;
