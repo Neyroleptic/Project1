@@ -5,15 +5,15 @@ typedef struct Element
 	int data;
 	Element* next;
 	Element* prev;
-} Element; //элемент стека
+} Element; 
 
-//Element* top; //вершина стека 
+
 
 class List
 {
 private:
-	Element* right = nullptr;
-	Element* left = nullptr; //указатель на начальный элемент стека - инициализированный элемент
+	Element* right = nullptr; //указатель на конечный элемент списка - инициализированный элемент
+	Element* left = nullptr; //указатель на начальный элемент списка - инициализированный элемент
 	int size = 0; //размер стека
 public:
 	//конструкторы
@@ -23,15 +23,15 @@ public:
 	List(const List& List_copy); //конструктор копирования
 
 	//функции стека
-	void push(int value); //добавление элемента в стек
-	void del(int num); //извлечение вершины
-	void print(); //вывод стека на экран
+	void push(int value); //добавление элемента в список
+	void del(int num);  //удаление элемента из списка
+	void print(); //вывод списка на экран
 
 	//геттеры и сеттеры
-	Element* get_right(); //взять элемент стека
+	Element* get_right(); 
 	Element* get_left();
-	void set_size(int& value); //поместить значение в стек
-	int get_size() const; //взять размер стека
+	void set_size(int& value); //поместить значение в список
+	int get_size() const; //взять размер списка
 
 	//перегруженные операторы
 	friend void operator< (int value, const List& list);

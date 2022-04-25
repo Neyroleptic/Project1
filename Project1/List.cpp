@@ -83,9 +83,8 @@ void List::del(int num)
 		cout << "—тек пуст, удал€ть нечего." << endl;
 	}
 	else {
-		int num = -1;
+		
 		Element* temp = left; //временна€ переменна€-вершина
-		Element* TEMP = left;
 		int deldata = 0; //место под удаленный элемент
 
 		system("cls");
